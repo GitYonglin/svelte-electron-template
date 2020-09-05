@@ -7,4 +7,4 @@
  * @FilePath: \s-zl-client\README.md
 -->
 
-# 柳州凌桥 svelte-electron-template
+# svelte-electron-template
