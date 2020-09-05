@@ -1,0 +1,150 @@
+:root {
+  --my-color: pink;
+  --body-bgc: #fff;
+  --bgc-color: #242549;
+  --bgc-color-1: #383b55;
+  --bgc-active: #56c05d;
+  --bgc-active-1: #ca1c59;
+  --mm-color: #56c05d;
+  --mpa-color: #ca1c59;
+  --font-size-1: 24px;
+  --font-size-2: 16px;
+  --font-size-3: 12px;
+  --font-size-4: 11px;
+  --font-color-default: #aaa;
+  --font-color-active: #fff;
+  --item-width: 204px;
+  --item-max-width: 500px;
+  --label-width: 54px;
+}
+
+body,
+main,
+div,
+button,
+p,
+input,
+label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--body-bgc);
+  height: 100vh;
+}
+.device {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  justify-content: center;
+  background-color: rgb(36, 37, 73);
+  color: var(--font-color-active);
+  main {
+    border-left: 1px solid var(--font-color-active);
+  }
+  main:first-child {
+    border-left: 0;
+  }
+}
+.input-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  &.column {
+    flex-direction: column;
+  }
+  input {
+    padding: 3px 5px;
+    border-radius: 5px;
+    transition: all 300ms;
+    font-size: var(--font-size-1);
+    width: inherit;
+    flex: 1;
+  }
+  &.mpa input {
+    color: var(--mpa-color);
+    border: 1px solid var(--mpa-color);
+    &:focus {
+      outline: var(--mpa-color) auto 1px;
+    }
+  }
+  &.mm input {
+    color: var(--mm-color);
+    border: 1px solid var(--mm-color);
+    &:focus {
+      outline: var(--mm-color) auto 1px;
+    }
+  }
+}
+.mm .label::after {
+  content: "mm";
+}
+.mpa .label::after {
+  content: "MPa";
+}
+.label {
+  display: flex;
+  justify-content: flex-end;
+  width: var(--label-width);
+  padding-right: 5px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: var(--font-size-3);
+  &::after {
+    font-size: var(--font-size-4, 12px);
+    color: #aaa;
+  }
+}
+// .input-content.mpa input {
+//   border: 1px solid var(--mpa-color);
+// }
+
+.modal {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+  button {
+    padding: 10px 10px;
+    font-size: 24px;
+    border-radius: 25px 25px 25px 25px;
+    border: 0;
+  }
+  &.todo {
+    z-index: 1002;
+    &::before {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    .todo {
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 25px;
+      color: var(--bgc-active-1);
+    }
+  }
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}

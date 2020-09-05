@@ -1,0 +1,14 @@
+{
+  "name": "lq-zl-app",
+  "version": "1.0.0",
+  "main": "./public/electron/main.js",
+  "description": "svelte-electron-template",
+  "author": {
+    "name": "Peach",
+    "email": "peachlin@outlook.com",
+    "url": "https://github.com/PeachT/"
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {}
+}

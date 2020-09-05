@@ -1,0 +1,7 @@
+/node_modules/
+/public/build/
+/app/public/**/*.js
+/app/public/**/*.js.map
+/pack/
+
+.DS_Store
